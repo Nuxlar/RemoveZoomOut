@@ -5,14 +5,14 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace NewMod
+namespace RemoveZoomOut
 {
   [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
   public class Main : BaseUnityPlugin
   {
     public const string PluginGUID = PluginAuthor + "." + PluginName;
     public const string PluginAuthor = "Nuxlar";
-    public const string PluginName = "NewMod";
+    public const string PluginName = "RemoveZoomOut";
     public const string PluginVersion = "1.0.0";
 
     internal static Main Instance { get; private set; }
@@ -26,9 +26,6 @@ namespace NewMod
 
       Log.Init(Logger);
       // LoadAssets();
-
-      PluginDirectory = Path.GetDirectoryName(Info.Location);
-      LanguageFolderHandler.Register(PluginDirectory);
 
       stopwatch.Stop();
       Log.Info_NoCallerPrefix($"Initialized in {stopwatch.Elapsed.TotalSeconds:F2} seconds");
